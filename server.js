@@ -2,6 +2,8 @@
 const express = require('express');
 require('dotenv').config();
 
+console.log('PORT from env:', process.env.PORT);
+
 const { sequelize } = require('./models/index');
 const routes = require('./routes/index');
 
@@ -29,8 +31,8 @@ const startServer = async () => {
     console.log('✅ Models synced safely.');
 
     app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚌 Server running on http://localhost:${PORT}`);
-   });
+      console.log(`🚌 Server running on http://localhost:${PORT}`);
+    });
 
   } catch (error) {
     console.error('❌ Unable to connect to database:', error.message);
